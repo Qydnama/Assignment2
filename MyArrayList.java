@@ -1,24 +1,12 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class MyArrayList<T> implements List<T>{
+public class MyArrayList<T> implements MyList<T>{
     private Object[] elements;
     private int size=0;
-
     public MyArrayList() {
         elements = new Object[5];
     }
-
     @Override
     public int size() {
-            return this.size;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return size==0;
+        return size;
     }
 
     @Override
@@ -26,22 +14,7 @@ public class MyArrayList<T> implements List<T>{
         return false;
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
-
-    @Override
-    public Object[] toArray() {
-        return new Object[0];
-    }
-
-    @Override
-    public <T1> T1[] toArray(T1[] a) {
-        return null;
-    }
-
-    public boolean add(T t) {
+    public void add(T t) {
         if (size == elements.length) {
           Object[] copy = new Object[elements.length*2];
           for (int i = 0; i<elements.length;i++) {
@@ -50,7 +23,12 @@ public class MyArrayList<T> implements List<T>{
           elements = copy;
         }
         elements[size++] = t;
-        return true;
+
+    }
+
+    @Override
+    public void add(T item, int index) {
+
     }
 
     @Override
@@ -58,30 +36,7 @@ public class MyArrayList<T> implements List<T>{
         return false;
     }
 
-    @Override
-    public boolean containsAll(Collection<?> c) {
-        return false;
-    }
 
-    @Override
-    public boolean addAll(Collection<? extends T> c) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(int index, Collection<? extends T> c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public boolean retainAll(Collection<?> c) {
-        return false;
-    }
 
     @Override
     public void clear() {
@@ -92,16 +47,11 @@ public class MyArrayList<T> implements List<T>{
     public T get(int index) {
         return (T) elements[index];
     }
-
-    @Override
-    public T set(int index, T element) {
-        return null;
+    public T getAll() {
+        return (T) elements;
     }
 
-    @Override
-    public void add(int index, T element) {
 
-    }
 
     @Override
     public T remove(int index) {
@@ -123,17 +73,8 @@ public class MyArrayList<T> implements List<T>{
     }
 
     @Override
-    public ListIterator<T> listIterator() {
-        return null;
-    }
+    public void sort() {
 
-    @Override
-    public ListIterator<T> listIterator(int index) {
-        return null;
-    }
-
-    @Override
-    public List<T> subList(int fromIndex, int toIndex) {
-        return null;
     }
 }
+
