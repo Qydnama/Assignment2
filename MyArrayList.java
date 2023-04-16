@@ -4,16 +4,20 @@ public class MyArrayList<T> implements MyList<T>{
     public MyArrayList() {
         elements = new Object[5];
     }
+    
+    //Returns the number of elements in the list.
     @Override
     public int size() {
         return size;
     }
 
+    //Returns true if the list contains the specified element, false otherwise.
     @Override
     public boolean contains(Object o) {
         return indexOf(o) > -1;
     }
 
+    //Appends the specified element to the end of the list.
     @Override
     public void add(T t) {
         if (size == elements.length) {
@@ -22,6 +26,8 @@ public class MyArrayList<T> implements MyList<T>{
         elements[size++] = t;
     }
 
+    //Inserts the specified element at the specified position in the list. 
+    //Shifts the element currently at that position (if any) and any subsequent elements to the right.
     @Override
     public void add(T item, int index) {
         for (int i = size+1;index<i;i--) {
@@ -34,6 +40,7 @@ public class MyArrayList<T> implements MyList<T>{
         size++;
     }
     
+    //Increases the size of the underlying array when the list is full.
     private void increaseArray() {
         Object[] copy = new Object[(int) (elements.length*1.5)];
         for (int i = 0; i<size;i++) {
@@ -43,6 +50,7 @@ public class MyArrayList<T> implements MyList<T>{
 
     }
 
+    //Removes the first occurrence of the specified element from the list, if it is present.
     @Override
     public boolean remove(Object o) {
         for(int i = 0;i<size;i++) {
@@ -54,6 +62,7 @@ public class MyArrayList<T> implements MyList<T>{
         return false;
     }
 
+    //Removes the element at the specified position in the list. Shifts any subsequent elements to the left.
     @Override
     public T remove(int index) {
         T oldValue = (T) elements[index];
@@ -64,6 +73,7 @@ public class MyArrayList<T> implements MyList<T>{
         return oldValue;
     }
 
+    //Removes all of the elements from the list.
     @Override
     public void clear() {
         for(int i = 0;i < size; i++) {
@@ -71,13 +81,14 @@ public class MyArrayList<T> implements MyList<T>{
         }
     }
 
-
+    //Returns the element at the specified position in the list.
     @Override
     public T get(int index) {
         return (T) elements[index];
     }
     
-    
+    //Returns the index of the first occurrence of the specified element in the list,
+    //or -1 if the list does not contain the element.
     @Override
     public int indexOf(Object o) {
         for(int i = 0;i<size;i++) {
@@ -87,8 +98,9 @@ public class MyArrayList<T> implements MyList<T>{
         return -1;
     }
     
-
- @Override
+    //Returns the index of the last occurrence of the specified element in the list,
+    //or -1 if the list does not contain the element.
+    @Override
     public int lastIndexOf(Object o) {
         int last=-1;
         for(int i = 0;i<size;i++) {
@@ -98,7 +110,7 @@ public class MyArrayList<T> implements MyList<T>{
         return last;
     }
     
-
+    //Sorts the list into ascending order using the natural ordering of its elements.
     @Override
     public void sort() {
         for (int i = 1; i < size; i++) {
