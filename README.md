@@ -1,6 +1,7 @@
 # Assignment2
 
 MyArrayList:
+
 size(): Returns the number of elements in the list.
 contains(Object o): Returns true if the list contains the specified element, false otherwise.
 add(T t): Appends the specified element to the end of the list.
@@ -17,6 +18,7 @@ sort(): Sorts the list into ascending order using the natural ordering of its el
 
 
 MyLinkedList:
+
 size(): Returns the number of elements in the linked list.
 contains(Object o): Returns true if the linked list contains the specified element, false otherwise.
 add(T item): Appends the specified element to the end of the linked list.
