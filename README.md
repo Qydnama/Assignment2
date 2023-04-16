@@ -41,15 +41,15 @@ contains(Object o): Returns true if the linked list contains the specified eleme
 
 add(T item): Appends the specified element to the end of the linked list.
 
-add(T item, int index): Inserts the specified element at the specified position in the linked list. Throws an IndexOutOfBoundsException if the index is out of range.
+add(T item, int index): Inserts the specified element at the specified position in the linked list.
 
 remove(Object o): Removes the first occurrence of the specified element from the linked list, if it is present.
 
-remove(int index): Removes the element at the specified position in the linked list. Throws an IndexOutOfBoundsException if the index is out of range.
+remove(int index): Removes the element at the specified position in the linked list.
 
 clear(): Removes all elements from the linked list.
 
-get(int index): Returns the element at the specified position in the linked list. Throws an IndexOutOfBoundsException if the index is out of range.
+get(int index): Returns the element at the specified position in the linked list.
 
 indexOf(Object o): Returns the index of the first occurrence of the specified element in the linked list, or -1 if the linked list does not contain the element.
 
